@@ -28,7 +28,7 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 
 🎉福利🎉: 最近基于nextjs实现的多维表格正式上线, 前100名用户仅需399元, 感兴趣可以参考体验一下.
 
-- 多维表格编辑器: http://mute.turntip.cn
+- 多维表格编辑器: http://pxcharts.com
 
 ## 1.0 is out! 🎉🎉🎉
 
