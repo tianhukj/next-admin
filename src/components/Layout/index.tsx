@@ -122,8 +122,8 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                             </Popover>
                         </span>
                         <span className={styles.group}>
-                            <Popover content={<div style={{width: '100%'}}><img width={180} src="/pay.png" /></div>} title="开源不易，支持作者">
-                            <TransactionOutlined style={{color: 'red'}} /> 赞赏作者
+                            <Popover content={<div style={{width: '100%'}}><img width={180} src="/pay.png" /></div>} title="天互科技，管理系统">
+                            <TransactionOutlined style={{color: 'red'}} /> 天互科技
                             </Popover>
                         </span>
                         <span className={styles.msg}>
@@ -159,7 +159,7 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
-                    Next-Admin ©{new Date().getFullYear()} Created by <a href="https://github.com/MrXujiang">徐小夕</a>
+                    Next-Admin ©{new Date().getFullYear()} Created by <a href="https://github.com/tianhukj">天互科技</a>
                 </Footer>
             </Layout>
         </Layout>
