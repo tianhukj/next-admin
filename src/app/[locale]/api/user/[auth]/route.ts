@@ -16,7 +16,6 @@ export async function POST(
     return NextResponse.json({ msg: '服务端配置异常' }, { status: 500 });
   }
 
-  // 登录逻辑
   if (auth === 'login') {
     const user = findUserByEmail(email);
     if (!user) return NextResponse.json({ msg: '用户不存在' }, { status: 401 });
@@ -27,7 +26,6 @@ export async function POST(
     return NextResponse.json({ data: { email: user.email }, msg: '登录成功' });
   }
 
-  // 注册逻辑
   if (auth === 'register') {
     if (findUserByEmail(email)) return NextResponse.json({ msg: '用户已存在' }, { status: 400 });
     const newUser = addUser(email, pwd);
@@ -38,4 +36,9 @@ export async function POST(
   }
 
   return NextResponse.json({ msg: '不支持的操作' }, { status: 400 });
+}
+
+// 新增 OPTIONS 方法，解决预检请求 405 核心问题
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
 }
