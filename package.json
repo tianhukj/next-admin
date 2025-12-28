@@ -64,7 +64,8 @@
     "react-selecto": "^1.26.3",
     "sharp": "^0.33.3",
     "sortablejs": "^1.15.2",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "bcryptjs": "^2.4.3"
   },
   "devDependencies": {
     "@types/d3-scale-chromatic": "^3.0.3",
