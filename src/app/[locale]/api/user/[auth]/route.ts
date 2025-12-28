@@ -41,3 +41,10 @@ export async function POST(
 
   return NextResponse.json({ msg: '不支持的操作' }, { status: 400 });
 }
+    cookies().set('token', token, { httpOnly: true, expires: Date.now() + oneDay });
+
+    return NextResponse.json({ data: { email: newUser.email }, msg: '注册成功' });
+  }
+
+  return NextResponse.json({ msg: '不支持的操作' }, { status: 400 });
+}
