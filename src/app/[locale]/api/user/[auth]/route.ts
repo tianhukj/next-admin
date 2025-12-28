@@ -40,15 +40,4 @@ export async function POST(
   }
 
   return NextResponse.json({ msg: '不支持的操作' }, { status: 400 });
-}    }
-    const newUser = addUser(email, pwd);
-    const info = { email: newUser.email, role: newUser.role };
-    const token = jsonwebtoken.sign(info, process.env.JWT_SECRET || '', { expiresIn: '3d' });
-    const oneDay = 3 * 24 * 60 * 60 * 1000;
-    cookies().set('token', token, { httpOnly: true, expires: Date.now() + oneDay });
-
-    return NextResponse.json({ data: { email: newUser.email }, msg: '注册成功' });
-  }
-
-  return NextResponse.json({ msg: '不支持的操作' }, { status: 400 });
 }
