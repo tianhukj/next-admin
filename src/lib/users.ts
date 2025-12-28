@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import { encrypt } from '@/utils/auth';
 
 export type User = {
   email: string;
@@ -6,14 +6,9 @@ export type User = {
   role: number;
 };
 
-// 示例内存用户（演示用）
-// 密码: admin123
+// demo in-memory user (not for production)
 const users: User[] = [
-  {
-    email: 'admin@example.com',
-    pwdHash: bcrypt.hashSync('admin123', 10),
-    role: 1
-  }
+  { email: 'admin@example.com', pwdHash: encrypt('admin123'), role: 1 }
 ];
 
 export function findUserByEmail(email: string) {
@@ -21,7 +16,7 @@ export function findUserByEmail(email: string) {
 }
 
 export function addUser(email: string, plainPwd: string) {
-  const pwdHash = bcrypt.hashSync(plainPwd, 10);
+  const pwdHash = encrypt(plainPwd);
   const user: User = { email, pwdHash, role: 1 };
   users.push(user);
   return user;
